@@ -11,14 +11,14 @@ public class AppConfig {
     @Bean
     public actor getactor1()
     {
-        actor actor1 = new actor("Amitabh Bachchan","Male",70);
-        return actor1;
+        actor actor = new actor("Amitabh Bachchan","Male",70);
+        return actor;
     }
     @Bean
     public actor getactor2()
     {
-        actor actor2 = new actor("SRK","Male",55);
-        return actor2;
+        actor actor1 = new actor("SRK","Male",55);
+        return actor1;
     }
 
     @Bean(value = "movie1")
