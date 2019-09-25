@@ -23,7 +23,7 @@ public class Main {
         System.out.println("Age: "+movie2.getActor().getAge());
 
         System.out.println(movie1 == movie2);
-        //System.out.println(movieB.getActor());
+
 
     }
 }
