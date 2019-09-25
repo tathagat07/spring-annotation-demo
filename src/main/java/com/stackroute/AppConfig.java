@@ -1,5 +1,7 @@
 package com.stackroute;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,21 +9,29 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean
-    public actor getactor()
+    public actor getactor1()
     {
-        actor actor = new actor();
-        actor.setName("Amitabh Bachchan");
-        actor.setGender("Male");
-        actor.setAge(70);
-        return actor;
+        actor actor1 = new actor("Amitabh Bachchan","Male",70);
+        return actor1;
     }
-
     @Bean
-    public movie getmovie()
+    public actor getactor2()
     {
-        movie movie = new movie();
-
-        return movie;
+        actor actor2 = new actor("SRK","Male",55);
+        return actor2;
     }
 
+    @Bean(value = "movie1")
+    public movie getmovie1()
+    {
+        movie movie1 = new movie(getactor1());
+        return movie1;
+    }
+
+    @Bean(value = "movie2")
+    public movie getmovie2()
+    {
+        movie movie2 = new movie(getactor2());
+        return movie2;
+    }
 }
