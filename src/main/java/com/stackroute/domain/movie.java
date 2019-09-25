@@ -1,4 +1,4 @@
-package com.stackroute;
+package com.stackroute.domain;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
@@ -14,7 +14,7 @@ public class movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
 
     actor actor;
     @Autowired
-    public movie(com.stackroute.actor actor) {
+    public movie(com.stackroute.domain.actor actor) {
         this.actor = actor;
     }
 
@@ -22,11 +22,11 @@ public class movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
 
     }
 
-    public com.stackroute.actor getActor() {
+    public com.stackroute.domain.actor getActor() {
         return actor;
     }
 
-    public void setActor(com.stackroute.actor actor) {
+    public void setActor(com.stackroute.domain.actor actor) {
         this.actor = actor;
     }
 
